@@ -94,6 +94,15 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+
+  -- Custom
+  use {
+      "brymer-meneses/grammar-guard.nvim",
+      requires = {
+        "neovim/nvim-lspconfig",
+        "williamboman/nvim-lsp-installer"
+      }
+    }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
