@@ -48,10 +48,10 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
+  use { "akinsho/bufferline.nvim", branch = "main" }
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
+  use { "akinsho/toggleterm.nvim", branch = "main" }
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -103,6 +103,12 @@ return packer.startup(function(use)
         "williamboman/nvim-lsp-installer"
       }
     }
+  use {
+  "ray-x/lsp_signature.nvim",
+  }
+
+  -- for latex
+  use "https://bitbucket.com/frabjous/knap.git"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

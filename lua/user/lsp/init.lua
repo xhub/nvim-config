@@ -6,3 +6,15 @@ end
 require "user.lsp.lsp-installer"
 require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
+
+
+local current_signature = function(width)
+  if not packer_plugins["lsp_signature.nvim"] or packer_plugins["lsp_signature.nvim"].loaded == false then
+    return ""
+  end
+  local sig = require("lsp_signature").status_line(width)
+  return sig.label .. "🐼" .. sig.hint
+end
+
+-- Need some work, very distracting
+-- require "lsp_signature".setup({})
