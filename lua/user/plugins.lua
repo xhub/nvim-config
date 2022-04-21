@@ -95,7 +95,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
 
-  -- Custom
+  -- CUSTOM 
   use {
       "brymer-meneses/grammar-guard.nvim",
       requires = {
@@ -109,6 +109,17 @@ return packer.startup(function(use)
 
   -- for latex
   use "https://bitbucket.com/frabjous/knap.git"
+  -- for comments
+  use {
+    "danymat/neogen",
+    config = function()
+        require('neogen').setup {}
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

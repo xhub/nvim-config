@@ -21,3 +21,8 @@ require("lspconfig").grammar_guard.setup({
     },
   },
 })
+
+local lspconfig = require("lspconfig")
+
+-- This assumes `ccls` exists on path
+-- lspconfig.ccls.setup {}
