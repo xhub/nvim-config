@@ -103,10 +103,7 @@ return packer.startup(function(use)
         "williamboman/nvim-lsp-installer"
       }
     }
-  use {
-  "ray-x/lsp_signature.nvim",
-  }
-
+  use "ray-x/lsp_signature.nvim"
   -- for latex
   use "https://bitbucket.com/frabjous/knap.git"
   -- for comments
@@ -119,6 +116,12 @@ return packer.startup(function(use)
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*"
   }
+  use "lervag/vimtex"
+  -- more snipppets
+  use "honza/vim-snippets"
+  -- surround-like plugin
+  use { "nvim-treesitter/nvim-treesitter-textobjects",
+        requires = { "nvim-treesitter/nvim-treesitter" } }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

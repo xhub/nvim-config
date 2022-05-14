@@ -9,6 +9,9 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+-- custom change
+require("luasnip.loaders.from_snipmate").lazy_load()
+luasnip.filetype_extend("all", { "_" })
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -119,8 +122,10 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  window = { -- see https://github.com/hrsh7th/nvim-cmp/issues/920
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
   },
   experimental = {
     ghost_text = false,
