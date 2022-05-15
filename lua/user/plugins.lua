@@ -106,6 +106,7 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
   -- for latex
   use "https://bitbucket.com/frabjous/knap.git"
+  use "lervag/vimtex"
   -- for comments
   use {
     "danymat/neogen",
@@ -116,12 +117,17 @@ return packer.startup(function(use)
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*"
   }
-  use "lervag/vimtex"
   -- more snipppets
   use "honza/vim-snippets"
   -- surround-like plugin
   use { "nvim-treesitter/nvim-treesitter-textobjects",
         requires = { "nvim-treesitter/nvim-treesitter" } }
+
+  -- Subsitution
+   use "tpope/vim-abolish"
+  -- vimwiki
+  use "vimwiki/vimwiki"
+  use "ElPiloto/telescope-vimwiki.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
