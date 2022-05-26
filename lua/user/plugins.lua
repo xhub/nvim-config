@@ -105,7 +105,7 @@ return packer.startup(function(use)
     }
   use "ray-x/lsp_signature.nvim"
   -- for latex
-  use "https://bitbucket.com/frabjous/knap.git"
+  use "frabjous/knap"
   use "lervag/vimtex"
   -- for comments
   use {
@@ -128,6 +128,9 @@ return packer.startup(function(use)
   -- vimwiki
   use "vimwiki/vimwiki"
   use "ElPiloto/telescope-vimwiki.nvim"
+
+  -- diff plugins
+  use "will133/vim-dirdiff"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
