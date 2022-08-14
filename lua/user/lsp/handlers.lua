@@ -1,3 +1,5 @@
+-- This file defines some basic LSP settings and exports `on_attach`
+
 local M = {}
 
 -- TODO: backfill this to template
@@ -13,6 +15,7 @@ M.setup = function()
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
+-- diagnostic config start
   local config = {
     -- disable virtual text
     virtual_text = false,
@@ -34,6 +37,7 @@ M.setup = function()
   }
 
   vim.diagnostic.config(config)
+-- diagnostic config end
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
@@ -103,14 +107,5 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
-end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
