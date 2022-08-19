@@ -9,7 +9,7 @@ require("lspconfig").ltex.setup({
 
 -- setup LSP config
 require("lspconfig").grammar_guard.setup({
-  cmd = { vim.fn.getenv("HOME") ..'/.local/share/nvim/lsp_servers/ltex/ltex-ls/bin/ltex-ls' }, -- add this if you install ltex-ls yourself
+  cmd = { vim.fn.getenv("HOME") ..'/.local/share/nvim/mason/bin/ltex-ls' }, -- add this if you install ltex-ls yourself
   settings = {
     ltex = {
       enabled = { "latex", "tex", "bib", "markdown", "text" },
