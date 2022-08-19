@@ -64,7 +64,15 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use({
+    "hrsh7th/nvim-cmp",  -- The completion plugin
+    requires = {
+      { "kdheepak/cmp-latex-symbols" }, -- for latex symbols
+    },
+    sources = {
+      { name = "latex_symbols" },
+    },
+  })
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -91,6 +99,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "p00f/nvim-ts-rainbow" -- rainbow parentheses
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -108,6 +117,7 @@ return packer.startup(function(use)
   -- for latex
   use "frabjous/knap"
   use "lervag/vimtex"
+
   -- for comments
   use {
     "danymat/neogen",
@@ -118,6 +128,7 @@ return packer.startup(function(use)
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*"
   }
+
   -- more snipppets
   use "honza/vim-snippets"
   -- surround-like plugin
@@ -126,6 +137,7 @@ return packer.startup(function(use)
 
   -- Subsitution
    use "tpope/vim-abolish"
+
   -- vimwiki
   use "vimwiki/vimwiki"
   use "ElPiloto/telescope-vimwiki.nvim"
