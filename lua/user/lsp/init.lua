@@ -16,5 +16,6 @@ local current_signature = function(width)
   return sig.label .. "🐼" .. sig.hint
 end
 
+vim.lsp.set_log_level("DEBUG")
 -- Need some work, very distracting
 -- require "lsp_signature".setup({})

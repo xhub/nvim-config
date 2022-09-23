@@ -59,3 +59,14 @@ lspconfig.sumneko_lua.setup {
 		},
 	},
 }
+
+lspconfig.ltex.setup({
+  on_attach = lsp_defaults.on_attach,
+  settings = {
+    { "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex" , "text"},
+  }
+})
+
+lspconfig.texlab.setup({
+  on_attach = lsp_defaults.on_attach,
+})

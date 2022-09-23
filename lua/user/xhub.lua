@@ -1,12 +1,6 @@
 -- hook to nvim-lspconfig
 require("grammar-guard").init()
 
-require("lspconfig").ltex.setup({
-  settings = {
-    { "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex" , "text"},
-  }
-})
-
 -- setup LSP config
 require("lspconfig").grammar_guard.setup({
   cmd = { vim.fn.getenv("HOME") ..'/.local/share/nvim/mason/bin/ltex-ls' }, -- add this if you install ltex-ls yourself
