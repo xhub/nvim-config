@@ -57,7 +57,7 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
+--    height = 30, TODO: useless? 2022.10.12
     hide_root_folder = false,
     side = "left",
     -- auto_resize = true,
