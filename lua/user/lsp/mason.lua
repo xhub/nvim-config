@@ -73,4 +73,8 @@ lspconfig.clangd.setup({
   on_attach = lsp_defaults.on_attach,
 })
 
+lspconfig.bashls.setup({
+  on_attach = lsp_defaults.on_attach,
+})
+
 
