@@ -77,4 +77,8 @@ lspconfig.bashls.setup({
   on_attach = lsp_defaults.on_attach,
 })
 
+lspconfig.cmake.setup({
+  on_attach = lsp_defaults.on_attach,
+})
+
 
