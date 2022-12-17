@@ -40,9 +40,6 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
-keymap("n", "<leader>fg", ":Telescope grep_string<cr>", opts)
-keymap("n", "<leader>fl", ":Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<cr>", opts)
 
