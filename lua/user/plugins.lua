@@ -46,8 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }}
   use { "akinsho/bufferline.nvim", branch = "main" }
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -147,6 +146,8 @@ return packer.startup(function(use)
   use { 'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim' }
 
+   -- telescope extensions
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
