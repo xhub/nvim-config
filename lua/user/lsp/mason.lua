@@ -40,7 +40,7 @@ lspconfig.jsonls.setup {
   },
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = lsp_defaults.on_attach,
 	settings = {
 
@@ -81,4 +81,28 @@ lspconfig.cmake.setup({
   on_attach = lsp_defaults.on_attach,
 })
 
+-- From https://github.com/fredrikekre/.dotfiles/blob/master/.config/nvim/init.vim
 
+-- Julia LSP (LanguageServer.jl)
+local REVISE_LANGUAGESERVER = false
+lspconfig.julials.setup({
+--    on_new_config = function(new_config, _)
+--        local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
+--        if REVISE_LANGUAGESERVER then
+--            new_config.cmd[5] = (new_config.cmd[5]):gsub("using LanguageServer", "using Revise; using LanguageServer; if isdefined(LanguageServer, :USE_REVISE); LanguageServer.USE_REVISE[] = true; end")
+--        elseif require'lspconfig'.util.path.is_file(julia) then
+--            new_config.cmd[1] = julia
+--        end
+--    end,
+    -- This just adds dirname(fname) as a fallback (see nvim-lspconfig#1768).
+    root_dir = function(fname)
+        local util = require'lspconfig.util'
+        return util.root_pattern 'Project.toml'(fname) or util.find_git_ancestor(fname) or
+               util.path.dirname(fname)
+    end,
+    on_attach = function(client, bufnr)
+        lsp_defaults.on_attach(client, bufnr)
+        -- Disable automatic formatexpr since the LS.jl formatter isn't so nice.
+        vim.bo[bufnr].formatexpr = ''
+    end,
+})
