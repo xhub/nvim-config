@@ -23,6 +23,11 @@ require("lspconfig").grammar_guard.setup({
   },
 })
 
+
+require('goto-preview').setup({
+  default_mappings = true;
+})
+
 -- local lspconfig = require("lspconfig")
 
 -- This assumes `ccls` exists on path

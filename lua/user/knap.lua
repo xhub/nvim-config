@@ -9,7 +9,7 @@ keymap('v','<F5>', '', { callback = function()
         require("knap").process_once()
     end,
     silent = true, noremap = true })
-keymap('n','<F5>', '', { callback = function() 
+keymap('n','<F5>', '', { callback = function()
         require("knap").process_once()
     end, silent = true, noremap = true })
 

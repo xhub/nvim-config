@@ -113,6 +113,12 @@ return packer.startup(function(use)
       }
     }
   use "ray-x/lsp_signature.nvim"
+   use {
+      "rmagatti/goto-preview",
+      config = function()
+         require('goto-preview').setup {}
+      end
+   }
   -- for latex
   use "frabjous/knap"
   use "lervag/vimtex"
