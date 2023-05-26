@@ -122,6 +122,7 @@ return packer.startup(function(use)
   -- for latex
   use "frabjous/knap"
   use "lervag/vimtex"
+  use "evesdropper/luasnip-latex-snippets.nvim"
 
   -- for comments
   use {
