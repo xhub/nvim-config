@@ -106,3 +106,11 @@ lspconfig.julials.setup({
         vim.bo[bufnr].formatexpr = ''
     end,
 })
+
+
+-- Python
+
+lspconfig.pyright.setup({
+  on_attach = lsp_defaults.on_attach,
+})
+
