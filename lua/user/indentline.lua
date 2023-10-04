@@ -7,8 +7,8 @@ indent_blankline.setup({
    scope = { show_start = false, show_end = false },
    indent = { char = "▏" },
    exclude = {
-      buftype = { "terminal", "nofile" },
-      filetype = {
+      buftypes = { "terminal", "nofile" },
+      filetypes = {
          "help",
          "startify",
          "dashboard",
