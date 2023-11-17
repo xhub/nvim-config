@@ -31,6 +31,12 @@ require('goto-preview').setup({
 
 vim.g.vimtex_view_method = 'sioyek'
 
+-- From https://www.reddit.com/r/neovim/comments/17xbsym/comment/k9nuwol
+-- For lines
+vim.opt.list = true
+
+vim.opt.listchars = { leadmultispace = "│   ", multispace = "│ ", tab = "│ ", }
+
 -- local lspconfig = require("lspconfig")
 
 -- This assumes `ccls` exists on path

@@ -53,7 +53,6 @@ return packer.startup(function(use)
   use { "akinsho/toggleterm.nvim", branch = "main" }
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
@@ -87,7 +86,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "nvimtools/none-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -98,7 +97,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "p00f/nvim-ts-rainbow" -- rainbow parentheses
+  use "hiphish/rainbow-delimiters.nvim" -- rainbow parentheses
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -155,6 +154,11 @@ return packer.startup(function(use)
 
    -- telescope extensions
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+
+   -- Support more filetypes
+   use { 'naegelejd/vim-swig' }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
