@@ -37,6 +37,16 @@ vim.opt.list = true
 
 vim.opt.listchars = { leadmultispace = "│   ", multispace = "│ ", tab = "│ ", }
 
+-- spell checking
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
+-- TODO: configure ltex
+-- local words = {}
+-- for word in io.open(vim.fn.stdpath("config") .. "/spell/en.utf-8.add", "r"):lines() do
+-- 	table.insert(words, word)
+-- end
+-- TODO: use this function in the dictionary: https://miikanissi.com/blog/grammar-and-spell-checker-in-nvim/
+
 -- local lspconfig = require("lspconfig")
 
 -- This assumes `ccls` exists on path
