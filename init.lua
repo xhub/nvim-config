@@ -23,3 +23,6 @@ require "user.vimwiki"
 require "user.xhub"
 require "user.filetypes"
 require "user.rainbow"
+
+
+require "gams.gams"

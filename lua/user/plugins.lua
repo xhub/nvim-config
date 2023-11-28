@@ -159,7 +159,10 @@ return packer.startup(function(use)
    -- Support more filetypes
    use { 'naegelejd/vim-swig' }
 
-  -- Automatically set up your configuration after cloning packer.nvim
+   use { 'VonHeikemen/fine-cmdline.nvim',
+      requires = { {'MunifTanjim/nui.nvim'} }
+
+}  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
