@@ -1,8 +1,10 @@
+-- refresh the buffer. Should have a way to disable it
 vim.api.nvim_create_autocmd({"FocusGained","BufEnter","CursorHold","CursorHoldI"},{
    pattern = "*.lst",
    command = "if mode() != 'c' | checktime | endif"
 })
 
+-- Set filetype based on extension and the header
 vim.api.nvim_create_autocmd("BufEnter", {
    pattern = "*.lst",
    callback = function()
@@ -12,6 +14,17 @@ vim.api.nvim_create_autocmd("BufEnter", {
    end,
 })
 
+-- Set filetype based on extension and the header
+vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "*.[0-9]\\+",
+   callback = function()
+      if vim.startswith(string.lower(vim.fn.getline(1)), '$title') then
+         vim.api.nvim_cmd({ cmd = 'setf', args = { 'gams' } }, {})
+      end
+   end,
+})
+
+-- TODO: this should update/rebuild a qflist, right now there is little control
 vim.api.nvim_create_autocmd("BufRead", {
    pattern = "*.lst",
    callback = function()

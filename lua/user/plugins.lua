@@ -118,6 +118,7 @@ return packer.startup(function(use)
          require('goto-preview').setup {}
       end
    }
+
   -- for latex
   use "frabjous/knap"
   use "lervag/vimtex"
@@ -156,13 +157,13 @@ return packer.startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 
-   -- Support more filetypes
-   use { 'naegelejd/vim-swig' }
+   use { 'naegelejd/vim-swig' } -- Support more filetypes
 
-   use { 'VonHeikemen/fine-cmdline.nvim',
-      requires = { {'MunifTanjim/nui.nvim'} }
+   use { 'VonHeikemen/fine-cmdline.nvim', requires = { {'MunifTanjim/nui.nvim'} } } -- For nice floating cmdline
 
-}  -- Automatically set up your configuration after cloning packer.nvim
+   use { 'milanglacier/yarepl.nvim' }
+
+  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
