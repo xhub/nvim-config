@@ -5,6 +5,7 @@ end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 -- Matches Solution report and get 
 --      SOLVER XXX     FROM LINE LLL
@@ -121,6 +122,7 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+      diagnostics.checkmake,
 --      quickfix_gams,
     --  diagnostics.codespell,
     -- diagnostics.flake8

@@ -69,15 +69,19 @@ lspconfig.texlab.setup({
   on_attach = lsp_defaults.on_attach,
 })
 
-lspconfig.clangd.setup({
-  on_attach = lsp_defaults.on_attach,
-})
-
 lspconfig.bashls.setup({
   on_attach = lsp_defaults.on_attach,
 })
 
 lspconfig.cmake.setup({
+  on_attach = lsp_defaults.on_attach,
+})
+
+lspconfig.gitlab_ci_ls.setup({
+  on_attach = lsp_defaults.on_attach,
+})
+
+lspconfig.jqls.setup({
   on_attach = lsp_defaults.on_attach,
 })
 

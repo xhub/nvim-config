@@ -42,6 +42,14 @@ vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 vim.fn.matchadd('errorMsg', [[\s\+$]])
 
+-- enable gitlab-ci-ls
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gitlab-ci*.{yml,yaml}",
+  callback = function()
+    vim.bo.filetype = "yaml.gitlab"
+  end,
+})
+
 -- TODO: configure ltex
 -- local words = {}
 -- for word in io.open(vim.fn.stdpath("config") .. "/spell/en.utf-8.add", "r"):lines() do

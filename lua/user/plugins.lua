@@ -163,6 +163,20 @@ return packer.startup(function(use)
 
    use { 'milanglacier/yarepl.nvim' }
 
+   -- DAP
+   use { "mfussenegger/nvim-dap",
+      requires = {
+         "rcarriga/nvim-dap-ui",
+         "theHamsta/nvim-dap-virtual-text",
+         "nvim-neotest/nvim-nio",
+         'nvim-telescope/telescope-dap.nvim',
+         "williamboman/mason.nvim",
+      }
+   }
+
+   -- For nice notification
+   use 'rcarriga/nvim-notify'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
